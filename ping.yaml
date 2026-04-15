@@ -1,4 +1,4 @@
-- name: pin the server
+- name: ping the server
   hosts: web
   tasks: #list of tasks or modules
   - name: pinging the server
