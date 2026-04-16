@@ -1,16 +1,4 @@
 - name: variables
-  hosts: localhost
-  vars: #variable declaration
-    cource: "kuberneties"
-    trainer: "venu"
-    duration: "150hrs"
-  tasks:
-  - name: print infromation
-    ansible.builtin.debug:
-      msg: "hi, we are learnig {{cource}} from {{trainer}} and the time {{duration}}."
-
-
-- name: variables
   hosts: [web]
   vars: #Declare vars
   cource: "ansible"
