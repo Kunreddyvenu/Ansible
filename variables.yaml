@@ -1,9 +1,7 @@
 - name: variables
   hosts: localhost
-  vars: #variable declaration
-    cource: "kuberneties"
-    trainer: "venu"
-    duration: "150hrs"
+  vars_files:
+  - vars.yaml
   tasks:
   - name: print infromation
     ansible.builtin.debug:
@@ -12,10 +10,8 @@
 
 - name: variables
   hosts: [web]
-  vars: #Declare vars
-    cource1: "ansible"
-    trainer1: "siva"
-    duration1: "120hrs"
+  vars_files:
+  - vars.yaml
   tasks:
   - name: print the infromation
     ansible.builtin.debug:
