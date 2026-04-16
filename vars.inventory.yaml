@@ -1,0 +1,6 @@
+- name: vars from inventory
+  hosts: localhost
+  tasks:
+  - name: vars from inventoy var files
+    ansible.builtin.debug:
+      msg: hi, username {{username}}. password {{password}}
