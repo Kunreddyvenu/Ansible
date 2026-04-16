@@ -1,11 +1,10 @@
-- name: using variables
+- name: variables
   hosts: localhost
   vars: #variable declaration
-    cource: "terrabform"
+    cource: "terraform"
     trainer: "siva"
-    duration: 120hrs
+    duration: "120hrs"
   tasks:
   - name: print infromation
     ansible.builtin.debug:
-    msg: "hi we are learnig {{cource}} from {{trainer}} and the time {{duration}}."
-
+      msg: "hi, we are learnig {{cource}} from {{trainer}} and the time {{duration}}."
