@@ -1,9 +1,9 @@
 - name: variables
   hosts: localhost
   vars: #variable declaration
-    cource: "terraform"
-    trainer: "siva"
-    duration: "120hrs"
+    cource: "kuberneties"
+    trainer: "venu"
+    duration: "150hrs"
   tasks:
   - name: print infromation
     ansible.builtin.debug:
