@@ -1,6 +1,6 @@
 - name: vars from argument
   hosts: localhost
   tasks:
-  - name: argument
-    ansible.builtin.debug:
+    - name: argument
+      ansible.builtin.debug:
       msg: "I am learnig {{name}} and duration {{time}}"
