@@ -9,7 +9,7 @@
     vars:
       course: "terraform"
     ansible.builtin.debug:
-      msg: "hi i am learning course {{course}} from trainer {{siva}} duration{{duration}}."
+      msg: "hi i am learning course {{course}} from trainer {{trainer}} duration{{duration}}."
 
   - name: Print information
     ansible.builtin.debug:
