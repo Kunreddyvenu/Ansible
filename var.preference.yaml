@@ -9,9 +9,9 @@
       prompt: please enter wishes
       private: false
   tasks:
-  - name: check preference
-    vars:
-    wishes: "mornig from task varible"
-    ansible.builtin.debug:
-    msg: "Hello good {{wishes}}"
+    - name: check preference
+      vars:
+        wishes: "mornig from task varible"
+      ansible.builtin.debug:
+        msg: "Hello good {{wishes}}"
 
