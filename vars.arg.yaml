@@ -4,3 +4,5 @@
   - name: get from args
     ansible.builtin.debug:
       msg: "I am learnig {{name}} and duration {{time}}"
+
+#we can pause the arguments while executing script
