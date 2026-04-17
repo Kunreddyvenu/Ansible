@@ -3,15 +3,15 @@
   vars:
     wishes: "mng from play variable"
   vars_files:
-  - vars.yaml
+    - vars.yaml
   vars_prompt:
-  - name: wishes
-    prompt: please enter wishes
-    private: false
-    tasks:
-  - name: check preference
-    vars:
+    - name: wishes
+      prompt: please enter wishes
+      private: false
+  tasks:
+    - name: check preference
+      vars:
       wishes: "mornig from task varible"
-    ansible.builtin.debug:
+      ansible.builtin.debug:
       msg: "Hello good {{wishes}}"
 
