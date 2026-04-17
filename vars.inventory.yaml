@@ -2,5 +2,7 @@
   hosts: localhost
   tasks:
   - name: vars from inventoy var files
+    vars:
+      timings: "7:30AM"
     ansible.builtin.debug:
-      msg: hi, username {{username}}. password {{password}}
+      msg: hi, username {{username}}. password {{password}} timings {{timings}}
