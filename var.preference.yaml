@@ -1,7 +1,7 @@
 - name : variable preference
   hosts: localhost
-  vars:
-    wishes: "mng from play variable"
+  # vars:
+  #   wishes: "mng from play variable"
   # vars_files:
   #   - vars.yaml
   # vars_prompt:
