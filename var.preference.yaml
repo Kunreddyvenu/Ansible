@@ -4,10 +4,10 @@
     wishes: "mng from play variable"
   vars_files:
     - vars.yaml
-  vars_prompt:
-    - name: wishes
-      prompt: please enter wishes
-      private: false
+  # vars_prompt:
+  #   - name: wishes
+  #     prompt: please enter wishes
+  #     private: false
   tasks:
     - name: check preference
       # vars:
@@ -18,3 +18,5 @@
 # 1 arguments
 # 2 task level varible win
 # 3 var files
+# 4 prompt
+
