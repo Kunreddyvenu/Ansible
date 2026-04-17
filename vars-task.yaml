@@ -1,16 +1,17 @@
-- name: vars over write
+- name: variables
   hosts:  localhost
   vars: #Declare vars
-    cource: "ansible"
+    course: "ansible"
     trainer: "siva"
     duration: "120hrs"
   tasks:
   - name: print information
     vars:
-      cource: "terraform"
+      course: "terraform"
     ansible.builtin.debug:
-      msg: "hi i am learning cource {{cource}} from trainer {{siva}} duration{{duration}}."
+      msg: "hi i am learning course {{course}} from trainer {{siva}} duration{{duration}}."
 
 - name: Print infromation
   ansible.builtin.debug:
     msg: "hi we are learning {{cource}} from trainer {{trainier}} duration{{duration}}."
+
