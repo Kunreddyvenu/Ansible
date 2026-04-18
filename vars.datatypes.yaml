@@ -15,3 +15,23 @@
     - name: print varibales
       ansible.builtin.debug:
         msg: "hi Iam learnig course{{course}} and subjects are {{subjects}} experience: {{experience}} is it real project {{Realproject}}"
+
+- name: datatypes
+  host: localhost
+  vars:
+    course: devops
+    tools: #list
+      - linux
+      - shell
+      - ansible
+    experience: #maps
+      linux: 3 #number
+      shell: 2
+      ansible: 1
+    real project: true #boolen
+  tasks:
+  - name: vars printouts
+    ansible.builtin.debug:
+      msg: "my course is {{course}} and subjects are {{tools}} experience {{experience}} is it real project {{real project}}"
+
+
