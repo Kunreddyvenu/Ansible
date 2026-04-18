@@ -57,10 +57,10 @@
 - name: convert list/items to dictionary
   hosts: localhost
   vars:
-  my_list:
-   - {'key': 'course', 'value': 'ansible'}
-   - {'key': 'trainer', 'value': 'Sivakumar'}
-   - {'key': 'duration', 'value': '12 hrs'}
+    my_list:
+      - {'key': 'course', 'value': 'ansible'}
+      - {'key': 'trainer', 'value': 'Sivakumar'}
+      - {'key': 'duration', 'value': '12 hrs'}
   tasks:
   - name: before convert 
     ansible.builtin.debug:
