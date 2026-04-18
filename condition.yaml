@@ -22,7 +22,7 @@
   - name : check name
     ansible.builtin.debug:
       msg: "my name is ravi"
-    when: name == ravi"
+    when: name == "ravi"
   - name: check age
     ansible.builtin.debug:
       msg: "ravi is major"
@@ -30,5 +30,5 @@
   - name: check he learn devops
     ansible.builtin.debug:
       msg: "yes ravi learns devops"
-    when: devops == devops
+    when: devops == true
 
