@@ -13,11 +13,10 @@
     ansible.builtin.dnf:
       name: mysql-server
       state: present
-  # STEP -3 Install MYSQL Client    
-  - name: install mysql client
-    ansible.builtin.dnf:
-      name: mysql-client
-      state: present       
+  # STEP -3 Install MYSQL Client    if you use UBUNTU
+  # MYSQL CLIENT TASK - not needed in RHEL
+  # mysql client tools come with mysql-server package itself
+       
   # Step 4 Install python dependencies for mysql
   # needed ansible to talk to mysql
   - name: install python3-mysqldb
