@@ -37,7 +37,21 @@
   tasks:
   - name: check min age and max age
     ansible.builtin.debug:
-      msg: "min age is {{ ages | min }} and max age is {{ ages | max }}" 
+      msg: "min age is {{ ages | min }} and max age is {{ ages | max }}"
+
+- name: convert list of items to dictionary
+  hosts: localhost
+  list_items:
+   - Sivakumar
+   - Venu
+   - devops
+  tasks:
+  - name: before convert 
+    ansible.builtin.debug:
+      msg: "all items {{list_items}}"
+  - name: after convert
+    ansible.builtin.debug:
+      msg: "all items {{ list_items | list2dict}}"
 
 
 
