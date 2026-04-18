@@ -29,7 +29,15 @@
   tasks: 
   - name: remove duplicate numbers 
     ansible.builtin.debug:
-      msg: "numbers are {{ numbers | unique }}"
+      msg: "{{ numbers | unique }}"
+# - name: remove duplicates
+#   hosts: localhost
+#   vars:
+#     numbers: [1, 2, 3, 3, 4, 4, 5]
+#   tasks:
+#   - name: remove duplicates
+#     ansible.builtin.debug:
+#       msg: "{{ numbers | unique }}"
 
 
 
