@@ -21,7 +21,7 @@
   # needed ansible to talk to mysql
   - name: install python3-PyMySQL
     ansible.builtin.dnf:
-      name: python3-mysqldb
+      name: python3-PyMySQL
       state: present
   # Step 5 Start and Enable mysql service
   - name: startign and enabling mysql service
