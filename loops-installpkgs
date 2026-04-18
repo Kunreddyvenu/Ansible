@@ -1,0 +1,14 @@
+- name: install pkgs using loops
+  hosts: localhost
+  become: yes
+  tasks:
+  - name: install pkgs using loops
+    ansible.builtin.dnf:
+      name: "{{ item }}"
+      state: latest
+    loop:
+    - nginx
+    - mysql
+    - postfix
+
+
