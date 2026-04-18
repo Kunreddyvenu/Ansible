@@ -5,7 +5,7 @@
   tasks:
   - name: default ansible
     ansible.builtin.debug:
-      msg: "my course is {{course | 'ansible'}}"
+      msg: "my course is {{course | default('Ansible') }}"
 
 - name : lower case 
   hosts: localhost
