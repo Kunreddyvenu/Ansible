@@ -1,0 +1,73 @@
+# Installation of MYSQL
+- name: MYSQL Installation
+  hosts: [db]
+  become: true
+
+  tasks:
+  # STEP -1 Update apt cache
+  - name: update apt cache
+    ansible.builtin.apt:
+      update_cache: yes
+  # STEP -2 Install MYSQL Server
+  - name: install mysql server
+    ansible.builtin.apt:
+      name: mysql-server
+      state: present
+  # STEP -3 Install MYSQL Client    
+  - name: install mysql client
+    ansible.builtin.apt:
+      name: mysql-client
+      state: present       
+  # Step 4 Install python dependencies for mysql
+  # needed ansible to talk to mysql
+  - name: install PIP dependencies
+    ansible.builtin.apt:
+      - name: python3-mysqldb
+        state: present
+  # Step 5 Start and Enable mysql service
+  - name: startign and enabling mysql service
+    ansible.builtin.service:
+      name: mysql
+      state: started
+      enabled: yes 
+  # Step 6 check mysql service status
+  - name: check mysql service stated or not
+    ansible.builtin.command:
+      cmd: systemctl status mysql
+    register: mysql_status
+
+  # Step 7 Print MYSQL status 
+  - name: print mysql status
+    ansible.builtin.debug:
+      msg: " {{ mysql_status.stdout }}"
+
+  # Step 8 Setting up MYSQL Root password 
+  - name: set mysql root password
+    ansible.builtin.mysql_user:
+      name: root
+      password: Root@1234
+      login_unix_socket: /var/run/mysqld/mysqld.sock
+      state: present
+  # Step 9 create a database 
+  - name: creating mysql database
+    ansible.builtin.mysql_db:
+      name: myappdb
+      state: present
+      login_user: root
+      login_password: "Root@1234"
+  # Step 10 create local mysql user
+  - name: creating mysql user
+    ansible.builtin.mysql_user:
+      name: myuser      
+      password: "User@1234"
+      priv: "myappdb.*:ALL"
+      login_user: root
+      login_password: Root@1234
+      state: present
+
+    
+
+
+          
+
+
