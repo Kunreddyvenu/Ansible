@@ -26,13 +26,13 @@
   # Step 5 Start and Enable mysql service
   - name: startign and enabling mysql service
     ansible.builtin.service:
-      name: mysql
+      name: mysqld
       state: started
       enabled: yes 
   # Step 6 check mysql service status
   - name: check mysql service stated or not
     ansible.builtin.command:
-      cmd: systemctl status mysql
+      cmd: systemctl status mysqld
     register: mysql_status
 
   # Step 7 Print MYSQL status 
@@ -45,7 +45,9 @@
     ansible.builtin.mysql_user:
       name: root
       password: Root@1234
-      login_unix_socket: /var/run/mysqld/mysqld.sock
+      login_unix_socket: /var/lib/mysql/mysql.sock
+      login_user: root
+      login_password: ""
       state: present
   # Step 9 create a database 
   - name: creating mysql database
