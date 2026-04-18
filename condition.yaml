@@ -7,7 +7,6 @@
     ansible.builtin.debug:
       msg: "you are an adult"
     when: age >= 18
-
   - name: print if minor
     ansible.builtin.debug:
       msg: "you are minor"
