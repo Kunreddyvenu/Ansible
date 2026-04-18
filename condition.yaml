@@ -32,3 +32,5 @@
       msg: "yes ravi learns devops"
     when: devops == true
 
+    # we use only when in ansible for any condition like above example 
+
