@@ -17,7 +17,7 @@
         msg: "hi Iam learnig course{{course}} and subjects are {{subjects}} experience: {{experience}} is it real project {{Realproject}}"
 
 - name: datatypes
-  host: localhost
+  hosts: localhost
   vars:
     course: devops
     tools: #list
