@@ -1,7 +1,5 @@
 - name: default ansible
   hosts: localhost
-  vars:
-    course: 
   tasks:
   - name: default ansible
     ansible.builtin.debug:
