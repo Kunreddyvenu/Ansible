@@ -4,24 +4,24 @@
   become: true
 
   tasks:
-  # STEP -1 Update apt cache
-  - name: update apt cache
-    ansible.builtin.apt:
+  # STEP -1 Update dnf cache
+  - name: update dnf cache
+    ansible.builtin.dnf:
       update_cache: yes
   # STEP -2 Install MYSQL Server
   - name: install mysql server
-    ansible.builtin.apt:
+    ansible.builtin.dnf:
       name: mysql-server
       state: present
   # STEP -3 Install MYSQL Client    
   - name: install mysql client
-    ansible.builtin.apt:
+    ansible.builtin.dnf:
       name: mysql-client
       state: present       
   # Step 4 Install python dependencies for mysql
   # needed ansible to talk to mysql
   - name: install python3-mysqldb
-    ansible.builtin.apt:
+    ansible.builtin.dnf:
       name: python3-mysqldb
       state: present
   # Step 5 Start and Enable mysql service
