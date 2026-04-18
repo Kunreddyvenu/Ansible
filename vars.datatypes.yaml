@@ -28,10 +28,10 @@
       linux: 3 #number
       shell: 2
       ansible: 1
-    real project: true #boolen
+    realproject: true #boolen
   tasks:
   - name: vars printouts
     ansible.builtin.debug:
-      msg: "my course is {{course}} and subjects are {{tools}} experience {{experience}} is it real project {{real project}}"
+      msg: "my course is {{course}} and subjects are {{tools}} experience {{experience}} is it real project {{realproject}}"
 
 
