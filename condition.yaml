@@ -11,3 +11,24 @@
     ansible.builtin.debug:
       msg: "you are minor"
     when: age < 18
+
+- name: condition clear script
+  hosts: localhost
+  vars:
+   name: "ravi"
+   age: 20
+   devops: true
+  tasks:
+  - name : check name
+    ansible.builtin.debug:
+      msg: "my name is ravi"
+    when: name == ravi"
+  - name: check age
+    ansible.builtin.debug:
+      msg: "ravi is major"
+    when: age >= 18
+  - name: check he learn devops
+    ansible.builtin.debug:
+      msg: "yes ravi learns devops"
+    when: devops == devops
+
