@@ -50,9 +50,13 @@
   - name: before convert 
     ansible.builtin.debug:
       msg: "before convert: {{ my_dict }}"
-  - name: after convert
-    ansible.builtin.debug:
-      msg: "after convert: {{ my_dict | dict2items}}"
+  # - name: after convert
+  #   ansible.builtin.debug:
+  #     msg: "after convert: {{ my_dict | dict2items }}"
+
+    #    - name: after convert
+    # ansible.builtin.debug:
+    #   msg: "After convert: {{ my_dict | dict2items }}"
 
 
 
