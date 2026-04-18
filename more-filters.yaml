@@ -25,9 +25,11 @@
 - name: remove duplicates
   hosts: localhost
   vars:
-    numbers: [1,2,3,4,4,4,4,5,5,5]
+    numbers: [1, 2, 3, 4, 4, 4, 4, 5, 5, 5]
   tasks: 
   - name: remove duplicate numbers 
     ansible.builtin.debug:
       msg: "numbers are {{ numbers | unique }}"
+
+
 
