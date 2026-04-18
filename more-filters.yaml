@@ -43,9 +43,9 @@
   hosts: localhost
   vars:
     my_dict:
-    course: ansible
-    trainer: Sivakumar
-    duration: 12 hrs
+      course: ansible
+      trainer: Sivakumar
+      duration: 12 hrs
   tasks:
   - name: before convert 
     ansible.builtin.debug:
