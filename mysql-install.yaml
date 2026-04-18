@@ -20,10 +20,10 @@
       state: present       
   # Step 4 Install python dependencies for mysql
   # needed ansible to talk to mysql
-  - name: install PIP dependencies
+  - name: install python3-mysqldb
     ansible.builtin.apt:
-      - name: python3-mysqldb
-        state: present
+      name: python3-mysqldb
+      state: present
   # Step 5 Start and Enable mysql service
   - name: startign and enabling mysql service
     ansible.builtin.service:
