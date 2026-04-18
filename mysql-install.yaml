@@ -13,34 +13,30 @@
     ansible.builtin.dnf:
       name: mysql-server
       state: present
-  # STEP -3 Install MYSQL Client    if you use UBUNTU
-  # MYSQL CLIENT TASK - not needed in RHEL
-  # mysql client tools come with mysql-server package itself
-       
-  # Step 4 Install python dependencies for mysql
+  # Step 3 Install python dependencies for mysql
   # needed ansible to talk to mysql
   - name: install python3-PyMySQL
     ansible.builtin.dnf:
       name: python3-PyMySQL
       state: present
-  # Step 5 Start and Enable mysql service
+  # Step 4 Start and Enable mysql service
   - name: startign and enabling mysql service
     ansible.builtin.service:
       name: mysqld
       state: started
       enabled: yes 
-  # Step 6 check mysql service status
+  # Step 5 check mysql service status
   - name: check mysql service stated or not
     ansible.builtin.command:
       cmd: systemctl status mysqld
     register: mysql_status
 
-  # Step 7 Print MYSQL status 
+  # Step 6 Print MYSQL status 
   - name: print mysql status
     ansible.builtin.debug:
       msg: " {{ mysql_status.stdout }}"
 
-  # Step 8 Setting up MYSQL Root password 
+  # Step 7 Setting up MYSQL Root password 
   - name: set mysql root password
     ansible.builtin.mysql_user:
       name: root
@@ -49,14 +45,14 @@
       login_user: root
       login_password: ""
       state: present
-  # Step 9 create a database 
+  # Step 8 create a database 
   - name: creating mysql database
     ansible.builtin.mysql_db:
       name: myappdb
       state: present
       login_user: root
       login_password: "Root@1234"
-  # Step 10 create local mysql user
+  # Step 9 create local mysql user
   - name: creating mysql user
     ansible.builtin.mysql_user:
       name: myuser      
