@@ -17,9 +17,9 @@
   # Step 2 Start and enable MYSQL server 
   - name: start and enable MYSQL server
     ansible.builtin.service:
-    name: mysqld
-    state: started
-    enabled : yes
+      name: mysqld
+      state: started
+      enabled : yes
   # Step 3 install dependencies 
   - name: install python mysql dependencies
     ansible.builtin.pip:
