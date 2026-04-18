@@ -12,7 +12,7 @@
    # Step 1 install mysql server
   - name: Install MYSQL server
     ansible.builtin.dnf:
-      name: mysql_server
+      name: mysql-server
       state: latest
   # Step 2 Start and enable MYSQL server 
   - name: start and enable MYSQL server
@@ -24,8 +24,8 @@
   - name: install python mysql dependencies
     ansible.builtin.pip:
       name:
-      - PyMySQL
-      - cryptography
+        - PyMySQL
+        - cryptography
       executable: pip3.9 # pip 3.11 if pythion version is 3.11
   # Step 4 check if already password setup or not 
   - name: check DB connection
@@ -34,8 +34,8 @@
       login_password: "{{mysql_root_password}}"
       login_host: "{{login_host}}"
       filter: version
-      ignore_erros: yes
-      register: mysql_connection_output
+    ignore_errors: yes
+    register: mysql_connection_output
   # Step 5 print login output   
   - name : print output
     ansible.builtin.debug:
